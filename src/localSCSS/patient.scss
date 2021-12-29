@@ -1,0 +1,47 @@
+$operationIconSize: 20px;
+.patient-panel{
+    margin-top: 20px;
+    width: 100%;
+ 
+    .header{
+        width: 100%;
+        position: relative;
+        justify-content: space-between;
+        .icon{
+            position:absolute;
+            right: 0;
+            width: 20%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            .operation{
+                cursor: pointer;
+                width: $operationIconSize;
+                height: $operationIconSize;
+                color: #659DBD;
+            }
+        }
+
+        .search{
+            width: 80%;
+            position:absolute;
+            left: 0;
+            display: flex;
+        }
+
+        &::after{
+            content: "";
+            display: block;
+            height: 50px;
+            width: 100%;
+        }
+    }
+
+    .showErr{
+        color: #5D5C61;
+    }
+
+}
+
+

@@ -1,0 +1,92 @@
+.add-patient-panel{
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 100vh;
+    background-color: rgba(93, 92, 97, 0.8);
+    opacity: 0;
+    z-index: -1;
+    .panel{
+        position: relative;
+        .close{
+            position: absolute;
+            right: 3px;
+            top: 3px;
+            width: 20px;
+            height: 20px;
+            color: #97CAEF;
+            cursor: pointer;
+        }
+    
+        form{
+            border-radius: 10px;
+            background-color: white;
+            padding: 20px;
+
+            .submit{
+                padding: 5px 15px;
+            }
+        }
+    }
+
+    .panel-in{
+        animation-name: panel-in;
+        animation-duration: 1s;
+        animation-fill-mode:forwards;
+        animation-timing-function: ease;
+    }
+
+    .panel-out{
+        animation-name: panel-out;
+        animation-duration: 1s;
+        animation-fill-mode:forwards;
+        animation-timing-function: ease;
+    }
+
+    @keyframes panel-in{
+        0%{
+          top: -500px;
+          opacity: 0;
+        }
+
+        100%{
+          top: 0px;
+        }
+    }
+
+    @keyframes panel-out {
+        0%{
+            top: 0px;
+        }
+
+        100%{
+            top: -500px;
+            opacity: 0;
+        }
+    }
+}
+
+.fade-out{
+    animation-name: fade-out;
+    animation-duration: 1s;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes fade-out {
+    0%{
+        opacity: 1;
+        z-index: 10;
+    }
+    100%{
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+.fade-in{
+    opacity: 1;
+    z-index: 10;
+}

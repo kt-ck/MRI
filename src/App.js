@@ -6,11 +6,16 @@ import ImgProcess from "./components/ImgProcess";
 import Login from "./components/Login";
 import MRIControl from "./components/MRIControl";
 import Patient from "./components/Patient";
-import { useState, useEffect } from "react"
+import PatientLog from "./components/PatientLog";
+import { useState } from "react"
 
 
 function App() {
-  const sidebarMenu = [{
+  const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [password, setPassword] = useState('')
+  const [token, setToken] = useState('')
+  const [sidebarMenu, setSidebarMenu] = useState([{
     "id": 0,
     "name": "MRI应用",
     "icon": faBox,
@@ -35,11 +40,33 @@ function App() {
     "name": "登录/注册",
     "icon": faUser,
     "url": "/login"
-  }]
-
+  }])
   const [navid, setNavid] = useState(0)
   const onChange = (navid)=>{
     setNavid(navid)
+  }
+  const onLogin = (email, name, password, token) => {
+    setEmail(email);
+    setName(name);
+    setPassword(password);
+    setToken(token);
+    setSidebarMenu(sidebarMenu.map((menu)=>menu.id === 4? {...menu, name}: menu));
+  }
+
+  const onLogout = () => {
+    setToken("");
+    setEmail("");
+    setName("");
+    setPassword("");
+    setSidebarMenu(sidebarMenu.map((menu)=>menu.id === 4? {...menu, name: "登录/注册"}: menu))
+  }
+
+  const getInfo = ()=>{
+    return {
+      email,
+      name,
+      password,
+    }
   }
   return (
     <div>
@@ -47,10 +74,12 @@ function App() {
         <Sidebar sidebarMenu={sidebarMenu} navid={navid} onChange={onChange}/>
         <Routes>
           <Route path="/" element={<Home/>}></Route>
-          <Route path="/patient" element={<Patient/>}></Route>
+          {/* <Route path="/patient" element={<Patient token={token}/>}></Route> */}
+          <Route path="/patient" element={<Patient token={token}/>}></Route>
+          <Route path="/patient/log/:id" element={<PatientLog token={token}/>}></Route>
           <Route path="/MRIControl" element={<MRIControl/>}></Route>
           <Route path="/imgProcess" element={<ImgProcess/>}></Route>
-          <Route path="/login" element={<Login/>}></Route>
+          <Route path="/login" element={<Login onLogin={onLogin} isLogin={token !== ""} getInfo={getInfo} onLogout={onLogout} onNavchange={onChange}/>}></Route>
         </Routes>
       </Router>
     </div>

@@ -1,8 +1,8 @@
-import "../index.scss"
+import "../index.scss";
 const Home = () => {
     return (
         <div className="container">
-            Home
+            MRI 
         </div>
     )
 }

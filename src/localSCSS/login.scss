@@ -1,0 +1,232 @@
+.container_login{
+    justify-content: center;
+}
+
+.login-box{
+    position: relative;
+    width: 80vw;
+    height: 120vw;
+
+    @media screen and (min-width: 700px) {
+        width: 540px;
+        height: 378px;
+    }
+
+    @media screen and (min-width: 1000px) {
+        width: 800px;
+        height: 560px;
+    }
+
+    @media screen and (min-width: 1500px) {
+        width: 1000px;
+        height: 700px;
+    }
+
+    @media screen and (min-width: 700px) {
+        .green-box{
+            position: absolute;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 40%;
+            background-color: #85DCB0;
+            border-radius: 6px;
+
+            .green-box-btn{
+                min-width: 100px;
+                padding: 3px 6px;
+                background-color: white;
+                color: #99738E;
+                border:0;
+                border-radius: 10px;
+                font-weight: 600;
+            }
+
+            .green-box-section{
+                color: white;
+                margin-bottom: 20px;
+                p{
+                    font-size: 15px;    
+                }
+            }
+        }
+
+        .green-box-go-right{
+            animation-name: green-box-go-right;
+            animation-duration: 1.5s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+        }
+
+        .green-box-go-left{
+            animation-name: green-box-go-left;
+            animation-duration: 1.5s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+        }
+
+        .lefttext-go-left {
+            position: relative;
+            animation-name: lefttext-go-left;
+            animation-duration: 1.5s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+        }
+
+        @keyframes lefttext-go-left {
+            100%{
+                left: -500px;
+                opacity: 0;
+            }
+        }
+
+        .lefttext-go-right {
+            position: relative;
+            animation-name: lefttext-go-right;
+            animation-duration: 1.5s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+        }
+
+        @keyframes lefttext-go-right {
+            0%{
+                left: -500px;
+                opacity: 0;
+            }
+            100%{
+                left: 0;
+                opacity: 100%;
+            }
+        }
+
+        .righttext-go-left {
+            position: relative;
+            right: -500px;
+            opacity: 0;
+            animation-name: righttext-go-left;
+            animation-duration: 1.5s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+        }
+
+        @keyframes righttext-go-left {
+            100%{
+                right: 0;
+                opacity: 100%;
+            }
+        }
+
+        .righttext-go-right {
+            position: relative;
+            animation-name: lefttext-go-right;
+            animation-duration: 1.5s;
+            animation-fill-mode:forwards;
+            animation-timing-function: linear;
+        }
+
+        @keyframes righttext-go-right {
+            100%{
+                right: -500px;
+                opacity: 0%;
+            }
+        }
+
+
+
+    
+
+
+        @keyframes green-box-go-left {
+            0%{
+                left: 60%;
+                width: 40%;
+                background-color: #85DCB0;
+            }
+            50%{
+                left: 25%;
+                width: 50%;
+                background-color: #41B3A3;
+            }
+            100%{
+                left: 0%;
+                width: 40%;
+                background-color: #85DCB0;
+            }
+        }
+
+        @keyframes green-box-go-right {
+            0%{
+                left: 0;
+                width: 40%;
+                background-color: #85DCB0;
+            }
+            50%{
+                left: 25%;
+                width: 50%;
+                background-color: #41B3A3;
+            }
+            100%{
+                left: 60%;
+                width: 40%;
+                background-color: #85DCB0;
+            }
+        }
+
+        .login-box-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 60%;
+            transition: all 1.5s ease;
+
+            h3 {
+                margin-bottom: 15px;
+            }
+            input{
+                border: 0;
+                width: 300px;
+                height: 40px;
+                padding-left:10px; 
+                margin-bottom: 5px;
+            }
+            .err{
+                color: red;
+            }
+            input[type="submit"]{
+                background-color: #739683;
+                color: white;
+            }
+        }
+
+        .login{
+            margin-left: 40%;
+        }
+    }
+    border-radius: 6px;
+    background-color: #F7F7F7;
+}
+
+.info{
+    width: 50%;
+    padding: 15px 0px;
+    box-shadow: 0 0 4px #dee2e6;
+    .title{
+        display: inline-block;
+        width: 33%;
+        padding: 0 15px;
+    }
+
+    .content{
+        display: inline-block;
+        color: rgba(0,0,0,0.6);
+        padding: 0 12px;
+    }
+}
+
+.quit-btn{
+    margin-top: 10px;
+}
