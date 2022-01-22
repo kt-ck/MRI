@@ -32,7 +32,7 @@ function App() {
     "url": "/MRIControl"
   },{
     "id": 3,
-    "name": "图像处理模块",
+    "name": "图像浏览模块",
     "icon": faImage,
     "url": "/imgProcess"
   },{
@@ -77,7 +77,7 @@ function App() {
           {/* <Route path="/patient" element={<Patient token={token}/>}></Route> */}
           <Route path="/patient" element={<Patient token={token}/>}></Route>
           <Route path="/patient/log/:id" element={<PatientLog token={token}/>}></Route>
-          <Route path="/MRIControl" element={<MRIControl/>}></Route>
+          <Route path="/MRIControl" element={<MRIControl token={token}/>}></Route>
           <Route path="/imgProcess" element={<ImgProcess/>}></Route>
           <Route path="/login" element={<Login onLogin={onLogin} isLogin={token !== ""} getInfo={getInfo} onLogout={onLogout} onNavchange={onChange}/>}></Route>
         </Routes>

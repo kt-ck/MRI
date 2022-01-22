@@ -1,0 +1,97 @@
+.findf-form{
+    width: 30%;
+}
+
+.FindXpr-container{
+    min-width: 80vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .r-h-100{
+        min-height: 100px;
+    }
+
+    .xprSelect{
+        min-height: 600px;
+    }
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 80vw;
+
+    .row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        min-height: 200px;
+    }
+
+    .row-center{
+        justify-content: center;
+    }
+
+    .row-h-100{
+        min-height: 100px;
+    }
+
+    .row-w-500{
+        width: 500px;
+    }
+
+}
+
+.row .paramBlock{
+    width: 500px;
+    h6{
+        width: 500px;
+        color: rgba(0, 0, 0, 0.6);
+    }
+    .no-data{
+        width: 300px;
+        min-height: 300px;
+        text-align: center;
+        border: 1px solid #eee;
+        margin-top: 5px;
+        color: rgba(0, 0, 0, 0.4);
+        padding: 150px 0;
+    }
+    .item{
+        display: flex;
+        justify-content: space-between;
+        .delete-icon{
+            width: 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+.row .status-panel{
+    width: 500px;
+    height: 300px;
+    background-color: black;
+    color: white;
+    .screen{
+        margin: 20px 10px;
+        .screen-row{
+            line-height: 40px;
+        }
+    }
+    
+}
