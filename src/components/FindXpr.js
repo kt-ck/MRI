@@ -19,7 +19,6 @@ function FindXpr({token, setScanParam, scanParam}) {
     ]
     const [rows, setRows] = useState([]);
     const [table2Row, setTable2Row] = useState([]);
-    const [SelectXpr, setSelectXpr] = useState([]);
     const [xprInfoShow, setXprInfoShow] = useState(false)
     const handleClose = () => setXprInfoShow(false);
     const handleShow = () => setXprInfoShow(true);
@@ -31,6 +30,7 @@ function FindXpr({token, setScanParam, scanParam}) {
           'Authorization': "MRI " + token 
           }
       }).then((res)=>{
+
           setRows(res.data.data["files"])
         }).catch((err)=>{
           console.log(err)
