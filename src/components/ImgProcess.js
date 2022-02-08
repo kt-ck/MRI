@@ -3,8 +3,9 @@ import { AccessAlarmOutlined,ZoomIn, ZoomOut,RotateLeft,RotateRight, Straighten,
 import { InputGroup, Button, FormControl,ListGroup } from "react-bootstrap";
 import { Tooltip } from "@mui/material";
 import { useEffect, useState } from "react";
+import NotLogin from "./NotLogin";
 import axios from "axios";
-const ImgProcess = ({ token }) => {
+const ImgProcess = ({ token, login }) => {
     const toolIcon = [{
         "label": "放大",
         "icon" : <ZoomIn />
@@ -39,6 +40,7 @@ const ImgProcess = ({ token }) => {
     const [dcmFileNameList, setDcmFileNameList] = useState([]);
     const [dcmShowList, setDcmShowList] = useState([]);
     const [ShowNameSet, setShowNameSet] = useState(new Set());
+    const [notLogin, setNotLogin] = useState(!login);
     // const ShowNameSet = new Set()
     useEffect(() => {
       const getDcmFileList = () => {
@@ -96,6 +98,7 @@ const ImgProcess = ({ token }) => {
     }
     return (
         <div className="container flex-main-center">
+            <NotLogin notLogin={notLogin} setNotLogin={setNotLogin} />
             <div className="panel">
                 <div className="imgpanel">
                     {

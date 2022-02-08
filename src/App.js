@@ -68,6 +68,7 @@ function App() {
       password,
     }
   }
+  const [login, setLogin] = useState(false);
   return (
     <div>
       <Router>
@@ -77,9 +78,9 @@ function App() {
           {/* <Route path="/patient" element={<Patient token={token}/>}></Route> */}
           <Route path="/patient" element={<Patient token={token}/>}></Route>
           <Route path="/patient/log/:id" element={<PatientLog token={token}/>}></Route>
-          <Route path="/MRIControl" element={<MRIControl token={token}/>}></Route>
-          <Route path="/imgProcess" element={<ImgProcess token={token}/>}></Route>
-          <Route path="/login" element={<Login onLogin={onLogin} isLogin={token !== ""} getInfo={getInfo} onLogout={onLogout} onNavchange={onChange}/>}></Route>
+          <Route path="/MRIControl" element={<MRIControl token={token} login={login}/> }></Route>
+          <Route path="/imgProcess" element={<ImgProcess token={token} login={login}/>}></Route>
+          <Route path="/login" element={<Login onLogin={onLogin} isLogin={token !== ""} getInfo={getInfo} onLogout={onLogout} onNavchange={onChange} setLogin={setLogin}/>}></Route>
         </Routes>
       </Router>
     </div>

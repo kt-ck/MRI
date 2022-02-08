@@ -11,13 +11,15 @@ import AdjustCenterF from './AdjustCenterF';
 import FindXpr from "./FindXpr";
 import StartToScan from "./StartToScan";
 import MRIFinalPanel from './MRIFinalPanel';
-const MRIControl = ({token}) => {
+import NotLogin from "./NotLogin";
+const MRIControl = ({token, login}) => {
     const steps = ['调整中心频率', '选择序列文件', '开始扫描'];
     const [activeStep, setActiveStep] = useState(0);
     const [skipped, setSkipped] = useState(new Set());
     const [pp, setPp] = useState(-0.431);
     const [spfd, setSpfd] = useState(20);
-    const [scanParam, setScanParam] = useState({})
+    const [scanParam, setScanParam] = useState({});
+    const [notLogin, setNotLogin] = useState(!login);
     const isStepOptional = (step) => {
         return step === 1;
     };
@@ -65,6 +67,7 @@ const MRIControl = ({token}) => {
     }
     return (
         <div className="container">
+            <NotLogin notLogin={notLogin} setNotLogin={setNotLogin} />
             <Box sx={{ width: '100%' }}>
                 <Stepper activeStep={activeStep}>
                     {steps.map((label, index) => {

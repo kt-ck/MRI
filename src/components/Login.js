@@ -9,7 +9,7 @@ import AlertTitle from '@mui/material/AlertTitle';
 import IconButton from '@mui/material/IconButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle} from "@fortawesome/free-solid-svg-icons";
-const Login = ({ onLogin, isLogin, getInfo, onLogout, onNavchange }) => {
+const Login = ({ onLogin, isLogin, getInfo, onLogout, onNavchange, setLogin }) => {
     const [greenboxstate, setgreenboxstate] = useState(0);
     const [goright, setgoright] = useState(false);
     const [goleft, setgoleft] = useState(false);
@@ -41,6 +41,7 @@ const Login = ({ onLogin, isLogin, getInfo, onLogout, onNavchange }) => {
           .then((res)=>{
             console.log(res.data)
             onLogin(res.data.user.email, res.data.user.name, res.data.user.password, res.data.token);
+            setLogin(true);
             navigate('/patient');
             onNavchange(1);
           })
